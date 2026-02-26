@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "./WhatsAppButton";
 
 export default function CTA() {
   return (
@@ -20,12 +20,14 @@ export default function CTA() {
           <p className="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
             Contactez-nous dès aujourd'hui pour un devis gratuit et sans engagement.
           </p>
-          <Link
-            href="#contact"
+          <a
+            href={getWhatsAppLink("Bonjour, je souhaite un devis gratuit pour vos services.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block px-10 py-4 bg-black hover:bg-gray-800 text-white font-semibold rounded-full transition-all hover:scale-105"
           >
             Demander un devis
-          </Link>
+          </a>
         </motion.div>
       </div>
     </section>
