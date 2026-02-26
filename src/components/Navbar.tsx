@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { getWhatsAppLink } from "./WhatsAppButton";
 
 const menuItems = [
   { name: "Nettoyage", href: "#nettoyage" },
@@ -71,12 +72,14 @@ export default function Navbar() {
 
           {/* CTA + Phone */}
           <div className="hidden lg:flex items-center gap-2">
-            <Link
-              href="#contact"
+            <a
+              href={getWhatsAppLink("Bonjour, je souhaite un devis gratuit pour vos services.")}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 bg-[#d4e4bc] hover:bg-[#c5d9a4] text-black text-[15px] font-medium rounded-full transition-colors"
             >
               Devis gratuit
-            </Link>
+            </a>
             <Link
               href="tel:+33636200985"
               className="px-6 py-3 border-2 border-gray-800 text-gray-700 text-[15px] rounded-full hover:bg-gray-50 transition-colors"
@@ -116,13 +119,15 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
-                <Link
-                  href="#contact"
+                <a
+                  href={getWhatsAppLink("Bonjour, je souhaite un devis gratuit pour vos services.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
                   className="px-6 py-3 bg-[#d4e4bc] text-black text-center font-medium rounded-full"
                 >
                   Devis gratuit
-                </Link>
+                </a>
                 <Link
                   href="tel:+33636200985"
                   onClick={() => setIsMenuOpen(false)}
